@@ -16,4 +16,26 @@ func TestNumberOfIslands(t *testing.T) {
 	if output2 != 3 {
 		t.Errorf("numIslands(input2) = %d; want 3", output2)
 	}
+
+	output1 = numIslandsDFS(input1)
+	output2 = numIslandsDFS(input2)
+
+	if output1 != 1 {
+		t.Errorf("numIslandsDFS(input1) = %d; want 1", output1)
+	}
+
+	if output2 != 3 {
+		t.Errorf("numIslandsDFS(input2) = %d; want 3", output2)
+	}
+
+	output1 = numIslandsDFSInMemory(input1)
+	output2 = numIslandsDFSInMemory(input2)
+
+	if output1 != 1 {
+		t.Errorf("numIslandsDFSInMemory(input1) = %d; want 1", output1)
+	}
+
+	if output2 != 3 {
+		t.Errorf("numIslandsDFSInMemory(input2) = %d; want 3", output2)
+	}
 }
