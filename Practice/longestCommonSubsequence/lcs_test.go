@@ -26,4 +26,12 @@ func TestLCS(t *testing.T) {
 	if output != 0 {
 		t.Errorf("longestCommonSubsequence(input1, input2) = %d; want 0", output)
 	}
+
+	input1 = "hieroglyphology"
+	input2 = "michaelangelo"
+
+	output = longestCommonSubsequence(input1, input2)
+	if output != 5 {
+		t.Errorf("longestCommonSubsequence(input1, input2) = %d; want 5", output)
+	}
 }
