@@ -35,4 +35,9 @@ func TestMyAtoi(t *testing.T) {
 	if output != math.MinInt32 {
 		t.Errorf("myAtoi(input) = %d; want %d", output, math.MinInt32)
 	}
+	input = "2147483648"
+	output = myAtoi(input)
+	if output != math.MaxInt32 {
+		t.Errorf("myAtoi(input) = %d; want %d", output, math.MaxInt32)
+	}
 }
