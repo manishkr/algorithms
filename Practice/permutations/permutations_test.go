@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestLCS(t *testing.T) {
+func TestPermutations(t *testing.T) {
 	input1 := []int{1, 2, 3}
 	input2 := []int{5}
 
