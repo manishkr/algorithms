@@ -11,30 +11,18 @@ func max(x, y int) int {
 	return x
 }
 
-func createSubString(s []string, index int) int {
-	set := make(map[string]bool)
-
-	for i := index; i < len(s); i++ {
-		if _, ok := set[s[i]]; ok {
-			return len(set)
-		} else {
-			set[s[i]] = true
-		}
-	}
-
-	return len(set)
-}
-
 func lengthOfLongestSubstring(s string) int {
-	lsMap := make([]map[string]bool, len(s))
-	for i := 0; i < len(s); i++ {
-		lsMap[i] = make(map[string]bool)
-	}
+	lsMap := make(map[string]int)
 
 	strArray := strings.Split(s, "")
 	longestLength := 0
-	for i := 0; i < len(s); i++ {
-		longestLength = max(longestLength, createSubString(strArray, i))
+	i := 0
+	for j := 0; j < len(strArray); j++ {
+		if val, ok := lsMap[strArray[j]]; ok {
+			i = max(i, val)
+		}
+		longestLength = max(longestLength, j-i+1)
+		lsMap[strArray[j]] = j + 1
 	}
 
 	return longestLength
