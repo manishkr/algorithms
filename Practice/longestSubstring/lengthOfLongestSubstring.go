@@ -1,9 +1,5 @@
 package main
 
-import (
-	"strings"
-)
-
 func max(x, y int) int {
 	if x < y {
 		return y
@@ -12,17 +8,15 @@ func max(x, y int) int {
 }
 
 func lengthOfLongestSubstring(s string) int {
-	lsMap := make(map[string]int)
-
-	strArray := strings.Split(s, "")
+	lsMap := make(map[rune]int)
 	longestLength := 0
 	i := 0
-	for j := 0; j < len(strArray); j++ {
-		if val, ok := lsMap[strArray[j]]; ok {
+	for pos, char := range s {
+		if val, ok := lsMap[char]; ok {
 			i = max(i, val)
 		}
-		longestLength = max(longestLength, j-i+1)
-		lsMap[strArray[j]] = j + 1
+		longestLength = max(longestLength, pos-i+1)
+		lsMap[char] = pos + 1
 	}
 
 	return longestLength
