@@ -8,10 +8,6 @@ func max(x int, y int) int {
 	return y
 }
 func longestPalindromeSubseqHelper(s string, i int, j int, memMap [][]int) int {
-	if len(s) == 1 {
-		return 1
-	}
-
 	if i == j {
 		return 1
 	}
