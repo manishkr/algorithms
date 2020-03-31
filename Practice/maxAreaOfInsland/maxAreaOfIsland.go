@@ -47,7 +47,9 @@ func maxAreaOfIsland(grid [][]int) int {
 	for i := 0; i < rows; i++ {
 		for j := 0; j < columns; j++ {
 			if grid[i][j] == 1 && !visited[i][j] {
-				maxAreaOfIsland = max(maxAreaOfIsland, dfs(grid, visited, directions, i, j))
+				visited[i][j] = true
+				area := dfs(grid, visited, directions, i, j) + 1
+				maxAreaOfIsland = max(maxAreaOfIsland, area)
 			}
 		}
 	}
