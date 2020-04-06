@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-func TestNumberOfIslands(t *testing.T) {
+func TestMaxAreaOfIslands(t *testing.T) {
 	input1 := [][]int{{0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
 		{0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
 		{0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
