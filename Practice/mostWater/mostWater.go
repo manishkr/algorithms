@@ -15,9 +15,13 @@ func min(x, y int) int {
 }
 func maxArea(height []int) int {
 	area := 0
-	for i := 0; i < len(height); i++ {
-		for j := i + 1; j < len(height); j++ {
-			area = max(area, (j-i)*min(height[i], height[j]))
+	l, r := 0, len(height)-1
+	for l < r {
+		area = max(area, (r-l)*min(height[l], height[r]))
+		if height[l] < height[r] {
+			l++
+		} else {
+			r--
 		}
 	}
 
