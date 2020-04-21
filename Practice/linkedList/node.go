@@ -7,7 +7,7 @@ type Node struct {
 	Next *Node
 }
 
-func (node *Node) PrintNode() {
+func (node *Node) Print() {
 	temp := node
 	for temp != nil {
 		fmt.Print(temp.Val, "->")
