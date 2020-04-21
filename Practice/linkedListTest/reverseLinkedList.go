@@ -17,13 +17,6 @@ func reverse(node *Node) *Node {
 	return revNode
 }
 
-func printNode(node *Node) {
-	temp := node
-	for temp != nil {
-		fmt.Print(temp.Val, "->")
-		temp = temp.Next
-	}
-}
 func main() {
 	node := Node{Val: 1}
 	node.Next = &Node{Val: 2}
@@ -31,16 +24,16 @@ func main() {
 	node.Next.Next.Next = &Node{Val: 4}
 	node.Next.Next.Next.Next = &Node{Val: 5}
 
-	printNode(&node)
+	node.PrintNode()
 	revNode := reverse(&node)
 	fmt.Println("\nReverse node")
-	printNode(revNode)
+	revNode.PrintNode()
 
 	revNode = reverse(nil)
 	fmt.Println("\nReverse node")
-	printNode(revNode)
+	revNode.PrintNode()
 
 	revNode = reverse(&Node{Val: 1})
 	fmt.Println("\nReverse node")
-	printNode(revNode)
+	revNode.PrintNode()
 }
