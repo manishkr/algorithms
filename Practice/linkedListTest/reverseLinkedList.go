@@ -1,11 +1,9 @@
 package main
 
 import "fmt"
+import linkedList "medhavat/algorithms/linkedList"
 
-type Node struct {
-	Val  int
-	Next *Node
-}
+type Node = linkedList.Node
 
 func reverse(node *Node) *Node {
 	var revNode *Node = nil

@@ -1,6 +1,6 @@
 package main
 
-//Assumption: all numbers are within int range, so ignoring overflow cases due to sum
+//Assumption: all numbers after sum are within int range, so ignoring overflow cases due to sum
 type Movie struct {
 	movieId  int
 	playTime int //In minutes
@@ -21,7 +21,7 @@ func findMovieCombinationHelper(movies []Movie, target int, resultMovieCombinati
 	if totalPlayTime == target {
 		*matchedMovies = append(*matchedMovies, resultMovieCombination)
 	}
-	if totalPlayTime > target {
+	if totalPlayTime >= target {
 		return
 	}
 
