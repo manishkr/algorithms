@@ -15,6 +15,17 @@ func (node *Node) Print() {
 	}
 }
 
+func (node *Node) Length() int {
+	current := node
+	count := 0
+	for current != nil {
+		count += 1
+		current = current.Next
+	}
+
+	return count
+}
+
 func Reverse(node *Node) *Node {
 	var revNode *Node = nil
 	for node != nil {

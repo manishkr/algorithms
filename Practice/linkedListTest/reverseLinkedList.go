@@ -13,6 +13,7 @@ func main() {
 	node.Next.Next.Next.Next = &Node{Val: 5}
 
 	node.Print()
+	fmt.Printf("\nLength of linked List %d", node.Length())
 	revNode := linkedList.Reverse(&node)
 	fmt.Println("\nReverse node")
 	revNode.Print()
