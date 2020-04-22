@@ -1,18 +1,26 @@
 package algorithms
 
-import "fmt"
+import (
+	"strconv"
+)
 
 type Node struct {
 	Val  int
 	Next *Node
 }
 
-func (node *Node) Print() {
+func (node *Node) String() string {
 	temp := node
+	str := ""
 	for temp != nil {
-		fmt.Print(temp.Val, "->")
+		str = str + strconv.Itoa(temp.Val)
 		temp = temp.Next
+		if temp != nil {
+			str = str + "->"
+		}
 	}
+
+	return str
 }
 
 func (node *Node) Length() int {

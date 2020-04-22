@@ -11,18 +11,17 @@ func main() {
 	node.Next.Next = &Node{Val: 3}
 	node.Next.Next.Next = &Node{Val: 4}
 	node.Next.Next.Next.Next = &Node{Val: 5}
-
-	node.Print()
+	fmt.Println(&node)
 	fmt.Printf("\nLength of linked List %d", node.Length())
 	revNode := linkedList.Reverse(&node)
 	fmt.Println("\nReverse node")
-	revNode.Print()
+	fmt.Println(revNode)
 
 	revNode = linkedList.Reverse(nil)
 	fmt.Println("\nReverse node")
-	revNode.Print()
+	fmt.Println(revNode)
 
 	revNode = linkedList.Reverse(&Node{Val: 1})
 	fmt.Println("\nReverse node")
-	revNode.Print()
+	fmt.Println(revNode)
 }
