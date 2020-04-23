@@ -6,9 +6,11 @@ import linkedList "medhavat/algorithms/linkedList"
 type Node = linkedList.Node
 
 func main() {
-	var node *Node
-	for i := 5; i > 0; i-- {
-		linkedList.Push(&node, i)
+	node := &Node{Val: 1}
+	tail := node
+	for i := 2; i <= 5; i++ {
+		linkedList.Push(&(tail.Next), i)
+		tail = tail.Next
 	}
 
 	fmt.Println(node)
