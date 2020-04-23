@@ -45,3 +45,9 @@ func Reverse(node *Node) *Node {
 
 	return revNode
 }
+
+func Push(node **Node, data int) {
+	newNode := Node{Val: data}
+	newNode.Next = *node
+	*node = &newNode
+}

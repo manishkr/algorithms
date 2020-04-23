@@ -6,14 +6,15 @@ import linkedList "medhavat/algorithms/linkedList"
 type Node = linkedList.Node
 
 func main() {
-	node := Node{Val: 1}
-	node.Next = &Node{Val: 2}
-	node.Next.Next = &Node{Val: 3}
-	node.Next.Next.Next = &Node{Val: 4}
-	node.Next.Next.Next.Next = &Node{Val: 5}
-	fmt.Println(&node)
+	node := &Node{Val: 5}
+	linkedList.Push(&node, 4)
+	linkedList.Push(&node, 3)
+	linkedList.Push(&node, 2)
+	linkedList.Push(&node, 1)
+
+	fmt.Println(node)
 	fmt.Printf("\nLength of linked List %d", node.Length())
-	revNode := linkedList.Reverse(&node)
+	revNode := linkedList.Reverse(node)
 	fmt.Println("\nReverse node")
 	fmt.Println(revNode)
 
