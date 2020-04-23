@@ -10,12 +10,11 @@ type Node struct {
 }
 
 func (node *Node) String() string {
-	temp := node
 	str := ""
-	for temp != nil {
-		str = str + strconv.Itoa(temp.Val)
-		temp = temp.Next
-		if temp != nil {
+	for current := node; current != nil; {
+		str = str + strconv.Itoa(current.Val)
+		current = current.Next
+		if current != nil {
 			str = str + "->"
 		}
 	}
@@ -24,11 +23,9 @@ func (node *Node) String() string {
 }
 
 func (node *Node) Length() int {
-	current := node
 	count := 0
-	for current != nil {
+	for current := node; current != nil; current = current.Next {
 		count += 1
-		current = current.Next
 	}
 
 	return count
