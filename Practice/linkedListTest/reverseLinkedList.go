@@ -6,11 +6,10 @@ import linkedList "medhavat/algorithms/linkedList"
 type Node = linkedList.Node
 
 func main() {
-	node := &Node{Val: 5}
-	linkedList.Push(&node, 4)
-	linkedList.Push(&node, 3)
-	linkedList.Push(&node, 2)
-	linkedList.Push(&node, 1)
+	var node *Node
+	for i := 5; i > 0; i-- {
+		linkedList.Push(&node, i)
+	}
 
 	fmt.Println(node)
 	fmt.Printf("\nLength of linked List %d", node.Length())
