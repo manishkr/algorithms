@@ -1,0 +1,11 @@
+.idea
+*.iml
+.gradle
+out/
+build/
+gen/
+deps/
+target/
+exampleProject
+testData
+.DS_Store
