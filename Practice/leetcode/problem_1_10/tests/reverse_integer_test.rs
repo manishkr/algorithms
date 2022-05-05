@@ -28,11 +28,17 @@ mod tests {
   }
 
   #[test]
-  fn test_reverse_integer_6() { assert_eq!(reverse_integer::reverse(1), 1); }
+  fn test_reverse_integer_6() {
+    assert_eq!(reverse_integer::reverse(1), 1);
+  }
 
   #[test]
-  fn test_reverse_integer_7() { assert_eq!(reverse_integer::reverse(100), 1); }
+  fn test_reverse_integer_7() {
+    assert_eq!(reverse_integer::reverse(100), 1);
+  }
 
   #[test]
-  fn test_reverse_integer_8() { assert_eq!(reverse_integer::reverse(1534236469), 0); }
+  fn test_reverse_integer_8() {
+    assert_eq!(reverse_integer::reverse(1534236469), 0);
+  }
 }

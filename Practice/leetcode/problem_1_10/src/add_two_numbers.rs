@@ -7,14 +7,14 @@ pub struct ListNode {
 impl ListNode {
   #[inline]
   fn new(val: i32) -> Self {
-    ListNode {
-      next: None,
-      val,
-    }
+    ListNode { next: None, val }
   }
 }
 
-pub fn add_two_numbers(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+pub fn add_two_numbers(
+  l1: Option<Box<ListNode>>,
+  l2: Option<Box<ListNode>>,
+) -> Option<Box<ListNode>> {
   let mut l1_current = l1;
   let mut l2_current = l2;
 
