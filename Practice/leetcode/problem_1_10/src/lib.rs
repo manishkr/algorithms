@@ -6,3 +6,4 @@ pub mod median_of_sorted_arrays;
 pub mod reverse_integer;
 pub mod two_sum;
 pub mod zigzag_conversion;
+pub mod palindrome_number;
