@@ -7,3 +7,4 @@ pub mod reverse_integer;
 pub mod two_sum;
 pub mod zigzag_conversion;
 pub mod palindrome_number;
+pub mod regular_expression_matching;
