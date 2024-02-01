@@ -1,0 +1,8 @@
+go 1.21.6
+
+use (
+	./add_two_numbers
+	./longest_substring
+	./median_sorted_arrays
+	./two_sum
+)
