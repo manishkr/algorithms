@@ -6,7 +6,7 @@ import sys
 """from enum import Enum"""
 
 class DataOption:
-	 Weather = "weather" 
+	 Weather = "weather"
 	 FootBall = "football"
 
 def isInt(str):
@@ -22,7 +22,7 @@ def getFloatVal(str):
 		return val
 	except ValueError:
 		return 0.0
-	
+
 class Data:
 	def __init__(self, type, name, maxVal, minVal):
 		self.Type = type
@@ -32,7 +32,7 @@ class Data:
 
 	def diff(self):
 		return self.MaxVal - self.MinVal
-	
+
 class FileHandler:
 	def __init__(self, fileName, option):
 		self.FileName = fileName
@@ -50,10 +50,10 @@ class FileHandler:
 			self.NameCol = 0
 			self.MaxCol = 0
 			self.MinCol = 0
-	
+
 	def perform(self):
 		dataList = []
-		
+
 		with open(self.FileName) as oFile:
 			for line in oFile:
 				words = line.split()
@@ -61,15 +61,15 @@ class FileHandler:
 					if(True == isInt(words[0].strip("."))):
 						data = Data(self.Option, words[self.NameCol], words[self.MaxCol].strip("*"), words[self.MinCol].strip("*"))
 						dataList.append(data)
-		
+
 		if(len(dataList) > 0):
 			maxObj = min(dataList, key = lambda x : x.diff())
-			
+
 			if(self.Option == DataOption.Weather):
 				print("Day on which temperature had minimum spread : ", maxObj.Name)
 			elif(self.Option == DataOption.FootBall):
 				print("Team which goal difference was minimum :", maxObj.Name)
-		
+
 if __name__ == '__main__':
 	if(len(sys.argv) == 3):
 		if(sys.argv[2].lower() == DataOption.Weather or sys.argv[2].lower() == DataOption.FootBall):
