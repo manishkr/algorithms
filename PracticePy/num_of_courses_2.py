@@ -1,39 +1,36 @@
 from collections import defaultdict, deque
+def find_order(num_courses, courses):
+    course_map = defaultdict(list)
+    in_degree = [0]*num_courses
+    for course_pair in courses:
+        course_map[course_pair[1]].append(course_pair[0])
+        in_degree[course_pair[0]] +=1
 
-def find_order(numCourses, prerequisites):
-    # Create adjacency list representation of the graph
-    graph = defaultdict(list)
-    in_degree = [0] * numCourses
-
-    for course, prereq in prerequisites:
-        graph[prereq].append(course)
-        in_degree[course] += 1
-
-    # Initialize a queue with courses having in-degree 0
-    queue = deque([course for course in range(numCourses) if in_degree[course] == 0])
-
-    # Initialize the result list
+    print(in_degree)
+    queue = deque([course for course in range(num_courses) if in_degree[course] == 0])
     result = []
 
-    # Perform topological sorting
     while queue:
         course = queue.popleft()
         result.append(course)
 
-        # Decrease in-degree of adjacent courses
-        for neighbor in graph[course]:
-            in_degree[neighbor] -= 1
-            if in_degree[neighbor] == 0:
-                queue.append(neighbor)
+        for neighbour in course_map[course]:
+            in_degree[neighbour] -=1
+            if in_degree[neighbour] == 0:
+                queue.append(neighbour)
 
-    # If there are still courses left, it means there's a cycle
-    if len(result) != numCourses:
-        return False
+    if len(result) != num_courses:
+        return []
 
-    return True
+    return result
 
 if __name__ == '__main__':
     courses = [[1,0]]
     num_courses =2
+    result = find_order(num_courses, courses)
+    print(result)
+
+    courses =[[1,0],[2,0],[3,1],[3,2]]
+    num_courses =4
     result = find_order(num_courses, courses)
     print(result)
